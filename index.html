@@ -3,24 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>css</title>
-    <style> 
-        .card{
-            color:red;
-            background-color: bisque;
-            border: 5px solid cornflowerblue;
-            border-radius: 7px;
-            padding: 20px;
-            height: 400px;
-            width: 400px;
-            margin-bottom: 20px;
-        }
-    </style>
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="card">
-        <img src="images.jpg" alt="height="400px"/>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Bakery Startup</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-disabled="true">Contact</a>
+        </li>
+      </ul>
     </div>
-    
+  </div>
+</nav>
+<div class="row" id="d1">
+    <div class="col bg-danger-subtle text-center">
+        <p style="margin-top: 200px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique deleniti consequuntur quos eum aperiam illum magnam quo vel officia fugiat, optio sit officiis, quod obcaecati.</p>
+    </div>
+    <div class="col">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMlEX9Ozojj3wqZzaQanPHVDw_eaFZtw4_SA&s " alt="" style="width: 700px;">
+    </div>
+</div>
+<h3 style="text-align: center; margin-top: 30px;">SERVICES AND ITEMS</h3>
+<div class="d-flex justify-content-center gap-4 mt-5">
+    <div class="card" style="width: 18rem;">
+      <img src="https://media.istockphoto.com/id/518468635/photo/french-pastries-on-display-a-confectionery-shop.jpg?s=612x612&w=0&k=20&c=av7rYRCLckvDp6s9sGmA_S9Lp_fTSDSSOtmR0wWJ8nY=" class="card-img-top" alt="">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2omd_565valcMQo3vxS6jmFfjzM5GGKHMfA&s" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="https://media.istockphoto.com/id/487402642/photo/fresh-juice.jpg?s=612x612&w=0&k=20&c=hjrPG05Pks54_dTutZEd31GIqua9LCG5-sOHMBHq-DA=" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+</div>
 </body>
 </html>
