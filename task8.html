@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="enter your list"id="inputValue">
+    <button onclick="addTask()">Add-Task</button><br><br>
+    <u1 id="listContent"></u1>
+
+    <script>
+        function addTask(){
+            let textvalue=document.getElementById("inputValue").value.trim()
+            if(textvalue === "") return;
+
+            let li=document.createElement("li")
+            li.textContent=textvalue;
+
+            document.getElementById("listContent").appendChild(li);
+
+            const removeBtn=document.createElement("button");
+            removeBtn.textContent="remove";
+
+            removeBtn.addEventListener("click",function(e){
+                li.remove();
+            })
+
+            li.appendChild(removeBtn)
+
+        }
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="enter your list"id="inputValue">
+    <button onclick="addTask()">Add-Task</button><br><br>
+    <u1 id="listContent"></u1>
+
+    <script>
+        function addTask(){
+            let textvalue=document.getElementById("inputValue").value.trim()
+            if(textvalue === "") return;
+
+            let li=document.createElement("li")
+            li.textContent=textvalue;
+
+            document.getElementById("listContent").appendChild(li);
+
+            const removeBtn=document.createElement("button");
+            removeBtn.textContent="remove";
+
+            removeBtn.addEventListener("click",function(e){
+                li.remove();
+            })
+
+            li.appendChild(removeBtn)
+
+        }
+    </script>
+</body>
+</html>
+
+
+
+
