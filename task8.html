@@ -1,3 +1,5 @@
+9th task
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,68 +8,81 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" placeholder="enter your list"id="inputValue">
-    <button onclick="addTask()">Add-Task</button><br><br>
-    <u1 id="listContent"></u1>
+     <input type="text" id="task-input" placeholder="Add new task...">
+    <button onclick="addTask()">Add Task</button>
 
-    <script>
-        function addTask(){
-            let textvalue=document.getElementById("inputValue").value.trim()
-            if(textvalue === "") return;
 
-            let li=document.createElement("li")
-            li.textContent=textvalue;
+    <ul id="task-list">
+        </ul>
+        <script>
 
-            document.getElementById("listContent").appendChild(li);
+function getTasks() {
+    const tasksString = localStorage.getItem('tasks') || '[]';
+    return JSON.parse(tasksString);
+}
 
-            const removeBtn=document.createElement("button");
-            removeBtn.textContent="remove";
+function saveTasks(tasks) {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+function renderTasks() {
+    const taskList = document.getElementById('task-list');
+    const tasks = getTasks();
+    taskList.innerHTML = ''; 
 
-            removeBtn.addEventListener("click",function(e){
-                li.remove();
-            })
+    tasks.forEach((task, index) => {
+        const li = document.createElement('li');
 
-            li.appendChild(removeBtn)
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = task.completed;
+        checkbox.onchange = () => toggleComplete(index);
 
+        const span = document.createElement('span');
+        span.textContent = task.text;
+        if (task.completed) {
+            span.style.textDecoration = 'line-through';
+            span.style.color = '#888';
         }
-    </script>
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <input type="text" placeholder="enter your list"id="inputValue">
-    <button onclick="addTask()">Add-Task</button><br><br>
-    <u1 id="listContent"></u1>
 
-    <script>
-        function addTask(){
-            let textvalue=document.getElementById("inputValue").value.trim()
-            if(textvalue === "") return;
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.onclick = () => deleteTask(index);
 
-            let li=document.createElement("li")
-            li.textContent=textvalue;
+        li.appendChild(checkbox);
+        li.appendChild(span);
+        li.appendChild(deleteBtn);
+        taskList.appendChild(li);
+    });
+}
 
-            document.getElementById("listContent").appendChild(li);
+function addTask() {
+    const input = document.getElementById('task-input');
+    const text = input.value.trim();
 
-            const removeBtn=document.createElement("button");
-            removeBtn.textContent="remove";
+    if (text) {
+        const tasks = getTasks();
+        tasks.push({ text: text, completed: false });
+        saveTasks(tasks);
+        renderTasks();
+        input.value = ''; 
+    }
+}
 
-            removeBtn.addEventListener("click",function(e){
-                li.remove();
-            })
+function toggleComplete(index) {
+    const tasks = getTasks();
+    tasks[index].completed = !tasks[index].completed; 
+    saveTasks(tasks);
+    renderTasks();
+}
 
-            li.appendChild(removeBtn)
+function deleteTask(index) {
+    const tasks = getTasks();
+    tasks.splice(index, 1); 
+    saveTasks(tasks);
+    renderTasks();
+}
 
-        }
-    </script>
+document.addEventListener('DOMContentLoaded', renderTasks);
+        </script>
 </body>
 </html>
-
-
-
-
